@@ -1,0 +1,122 @@
+version: "3.1"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - oi
+    - oie
+    - ola
+    - olá
+    - eae
+    - e aí
+    - bom dia
+    - boa tarde
+    - boa noite
+    - oi, tudo bem?
+    - opa, tudo bem?
+    - olá, como vai
+
+- intent: agendamento_compromisso
+  examples: |
+    - gostaria de marcar um compromisso
+    - quero agendar um compromisso
+    - quero marcar um compromisso
+    - marcar compromisso
+    - agendar compromisso
+    - marcar uma consulta
+    - agendar uma consulta
+    - marcar consulta
+    - agendar consulta
+    - marcar um horário
+    - agendar um horário
+    - marcar horário
+    - agendar horário
+
+- intent: agendamento_especialidade
+  examples: |
+    - pedro pimenta
+    - dentista pedro pimenta
+    - dr. pedro pimenta
+    - dr pedro pimenta
+    - dr. pimenta
+    - dr pimenta
+
+- intent: agendamento_data_hora
+  examples: |
+    - pode ser na proxima segunda, pela manhã
+    - na quinta de tarde
+    - na sexta a tarde
+    - na sexta de tarde
+    - terca, pela manhã
+    - no dia 10/05 no período da manhã
+    - no dia 10/05 de manhã
+    - 12/06 de manhã
+    - 12/06 pela manhã
+    - 12/06/25 a tarde
+
+- intent: agradecimento
+  examples: |
+    - perfeito
+    - obrigado
+    - genial
+    - jóia
+    - show de bola
+    - show
+    - legal
+    - valeu
+    - muito obrigado
+    - muito obrigada
+    - agradecido
+    - agradecida
+    - thanks
+    - vlw
+    - obg
+    - ok
+
+- intent: finalizacao
+  examples: |
+    - nao, é só isso
+    - é só isso
+    - é só
+    - isso é tudo
+    - isso é tudo, obrigado
+    - isso é tudo, obrigada
+    - isso é tudo, valeu
+    - isso é tudo, obg
+    - é só, obrigado
+    - Não preciso de mais nada
+    - não era apenas isso
+    - por enquanto é só isso mesmo
+
+- intent: compromissos_dia
+  examples: |
+    - o que tem pra hoje?
+    - o que tenho pra hoje?
+    - tenho algum compromisso hoje?
+    - tenho algum compromisso para hoje?
+    - tenho algum compromisso agendado para hoje?
+    - tenho algum compromisso marcado para hoje?
+    - quais são meus compromissos para hoje?
+    - quais são meus compromissos hoje?
+    - quais são meus compromissos agendados para hoje?
+    - quais são meus compromissos marcados para hoje?
+    - o que tem pra amanhã?
+    - o que tenho pra amanhã?
+    - tenho algum compromisso amanhã?
+    - tenho algum compromisso para amanhã?
+    - tenho algum compromisso agendado para amanhã?
+
+- intent: compromissos_semana
+  examples: |
+    - o que tenho pra essa semana?
+    - o que tenho pra essa semana?
+    - o que tenho pra semana?
+    - o que tenho pra semana que vem?
+    - o que tenho pra próxima semana?
+    - o que tenho pra semana que vem?
+    - o que tenho pra próxima semana?
+    - tenho algum compromisso essa semana?
+    - tenho algum compromisso para essa semana?
+    - tenho algum compromisso agendado para essa semana?
+    - tenho algum compromisso marcado para essa semana?
+    - tenho algum compromisso essa semana?
