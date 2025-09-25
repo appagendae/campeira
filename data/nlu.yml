@@ -1,6 +1,64 @@
 version: "3.1"
 
 nlu:
+- lookup: dia_semana
+  examples: |
+    - segunda
+    - terca
+    - terça
+    - quarta
+    - quinta
+    - sexta
+    - sabado
+    - sábado
+    - domingo
+    - segunda-feira
+    - terça-feira
+    - quarta-feira
+    - quinta-feira
+    - sexta-feira
+    - seg
+    - ter
+    - qua
+    - qui
+    - sex
+    - sáb
+    - dom
+    - sab
+    - lunes
+    - martes
+    - miércoles
+    - miercoles
+    - jueves
+    - viernes
+
+- lookup: periodo_dia
+  examples: |
+    - manhã
+    - manha
+    - tarde
+    - noite
+    - manhãzinha
+    - manhazinha
+    - madrugada
+    - manhã cedo
+    - manha cedo
+    - de manhã
+    - de manha
+    - de tarde
+    - de noite
+
+- regex: data_hora
+  examples: |
+    - \d{2}/\d{2}(/\d{2,4})?(\s+às?\s+\d{1,2}(:\d{2})?)?
+    - \d{1,2}(:\d{2})?\s+de
+    - \d{1,2}(:\d{2})?\s+às?\s+\d{1,2}(:\d{2})?
+    - \d{1,2}(:\d{2})?\s+as
+    - \d{2}/\d{2}
+    - \d{2}/\d{2}/\d{2,4}
+    - \d{1,2}(:\d{2})?\s+às
+    - \d{1,2}(:\d{2})?
+
 - intent: saudacao
   examples: |
     - oi
@@ -34,24 +92,40 @@ nlu:
 
 - intent: agendamento_especialidade
   examples: |
-    - pedro pimenta
-    - dentista pedro pimenta
-    - dr. pedro pimenta
-    - dr pedro pimenta
-    - dr. pimenta
-    - dr pimenta
+    - Gostaria de uma consulta com um [urologista](especialidade)
+    - Quero agendar com um [dermatologista](especialidade)
+    - Quero marcar com um [cardiologista](especialidade)
+    - Marcar com um [pediatra](especialidade)
+    - Agendar com um [psicólogo](especialidade)
+    - Marcar um horário para um [psiquiatra](especialidade)
+    - Agendar com um [ginecologista](especialidade)
+    - Marcar com um [neurologista](especialidade)
+    - Consulta com o [nutricionista](especialidade)
+    - Marcar com uma consulta com um [oftalmologista](especialidade)
+    - Agendar com um [otorrinolaringologista](especialidade)
+    - Marcar com um [clínico geral](especialidade)
+    - Agendar com um [clínico geral](especialidade)
+    - Marcar com um [endocrinologista](especialidade)
+    - Agendar com um [endocrinologista](especialidade)
+    - Marcar com um [gastroenterologista](especialidade)
+    - Agendar com um [gastroenterologista](especialidade)
+    - Marcar com um [reumatologista](especialidade)
+    - [gastro](especialidade)
+    - [dermato](especialidade)
+    - [cardio](especialidade)
+    - [pediatra](especialidade)
 
 - intent: agendamento_data_hora
   examples: |
     - pode ser na proxima segunda, pela manhã
-    - na quinta de tarde
+    - na [quinta](dia_semana) de [tarde](dia_periodo)
     - na sexta a tarde
     - na sexta de tarde
     - terca, pela manhã
     - no dia 10/05 no período da manhã
     - no dia 10/05 de manhã
     - 12/06 de manhã
-    - 12/06 pela manhã
+    - [12/06](data_hora) pela manhã
     - 12/06/25 a tarde
 
 - intent: agradecimento

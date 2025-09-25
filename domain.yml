@@ -9,26 +9,36 @@ intents:
   - finalizacao
   - compromissos_dia
   - compromissos_semana
+entities:
+  - data_hora
+  - especialidade
+  - dia_semana
+  - dia_periodo
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_saudacao:
+  - text: "Olá! Como posso ajudar?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_agendamento_compromisso:
+  - text: "Claro, para quando você gostaria de agendar o compromisso?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_agendamento_especialidade:
+  - text: "Gostaria de verificar a disponibilidade do Dr. Pimenta para hoje?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_agendamento_data_hora:
+  - text: "Anotado! Seu compromisso será agendado."
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_agradecimento:
+  - text: "De nada! Estou aqui para ajudar."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_finalizacao:
+  - text: "Tenha um ótimo dia!"
+
+  utter_compromissos_dia:
+  - text: "Vou consultar suas agendas para hoje."
+
+  utter_compromissos_semana:
+  - text: "Vou fazer um resumo dos seus compromissos para a semana."
 
 session_config:
   session_expiration_time: 60
