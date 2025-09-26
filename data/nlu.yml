@@ -12,11 +12,6 @@ nlu:
     - sabado
     - sábado
     - domingo
-    - segunda-feira
-    - terça-feira
-    - quarta-feira
-    - quinta-feira
-    - sexta-feira
     - seg
     - ter
     - qua
@@ -32,7 +27,7 @@ nlu:
     - jueves
     - viernes
 
-- lookup: periodo_dia
+- lookup: dia_periodo
   examples: |
     - manhã
     - manha

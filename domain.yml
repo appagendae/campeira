@@ -15,24 +15,52 @@ entities:
   - dia_semana
   - dia_periodo
 
+slots:
+  especialidade_medico:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: especialidade
+  periodo_consulta_agenda:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: dia_periodo
+  data_hora_consulta:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: data_hora
+      - type: from_entity
+        entity: dia_semana
+
 responses:
   utter_saudacao:
   - text: "Olá! Como posso ajudar?"
 
   utter_agendamento_compromisso:
-  - text: "Claro, para quando você gostaria de agendar o compromisso?"
+  - text: "Claro, qual tipo de compromisso?"
 
   utter_agendamento_especialidade:
-  - text: "Gostaria de verificar a disponibilidade do Dr. Pimenta para hoje?"
+  - text: "Entendido. Qual a data e o período (manha/tarde) que você prefere?"
 
   utter_agendamento_data_hora:
-  - text: "Anotado! Seu compromisso será agendado."
+  - text: "Anotado! Seu compromisso será agendado. {especialidade_medico} - {periodo_consulta_agenda} - {data_hora_consulta}."
 
   utter_agradecimento:
   - text: "De nada! Estou aqui para ajudar."
 
   utter_finalizacao:
   - text: "Tenha um ótimo dia!"
+
+  utter_repetir_especialidade:
+  - text: "Desculpe, não entendi a especialidade. Poderia repetir?"
+
+  utter_repetir_data_periodo:
+  - text: "Desculpe, não entendi a data e o período. Poderia repetir?"
 
   utter_compromissos_dia:
   - text: "Vou consultar suas agendas para hoje."
@@ -43,3 +71,15 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - utter_agradecimento
+  - utter_saudacao
+  - utter_agendamento_compromisso
+  - utter_agendamento_especialidade
+  - utter_agendamento_data_hora
+  - utter_repetir_especialidade
+  - utter_repetir_data_periodo
+  - utter_finalizacao
+  - utter_compromissos_dia
+  - utter_compromissos_semana

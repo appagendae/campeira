@@ -2,13 +2,31 @@ version: "3.1"
 
 stories:
 
+- story: inicio da conversa
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: agendamento_compromisso
+  - action: utter_agendamento_compromisso
+  - checkpoint: fim_inicio_conversa
+
 - story: Agendamento de Compromisso
   steps:
   - intent: saudacao
   - action: utter_saudacao
   - intent: agendamento_compromisso
   - action: utter_agendamento_compromisso
+  - intent: agendamento_especialidade
+    entities:
+    - especialidade: gastro
+  - slot_was_set:
+    - especialidade_medico: gastro
+  - action: utter_agendamento_especialidade
   - intent: agendamento_data_hora
+  - slot_was_set:
+    - periodo_consulta_agenda: tarde
+  - slot_was_set:
+    - data_hora_consulta: sexta
   - action: utter_agendamento_data_hora
   - intent: finalizacao
   - action: utter_finalizacao
